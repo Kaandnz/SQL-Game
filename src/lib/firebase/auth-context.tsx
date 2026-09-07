@@ -8,7 +8,6 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth, googleProvider, isFirebaseConfigured } from "./client";
-import { loadUserProgressFromCloud, saveUserProgressToCloud } from "./sync";
 import { loadUserProgressFromCloud, saveUserProgressToCloud, getLocalUserProgress } from "./sync";
 import { useUserStore } from "../state/user-store";
 
