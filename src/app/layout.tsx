@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { AuthProvider } from "@/lib/firebase/auth-context";
+import { AuthLoadingOverlay } from "@/components/auth/AuthLoadingOverlay";
 
 export const metadata: Metadata = {
   title: "SQL Quest: Data Detective | İnteraktif SQL Öğrenme Oyunu",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <AuthProvider>
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
+          <AuthLoadingOverlay />
         </AuthProvider>
       </body>
     </html>

@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider, isFirebaseConfigured } from "./client";
 import { loadUserProgressFromCloud, saveUserProgressToCloud } from "./sync";
+import { loadUserProgressFromCloud, saveUserProgressToCloud, getLocalUserProgress } from "./sync";
 import { useUserStore } from "../state/user-store";
 
 interface AuthContextType {
@@ -53,13 +54,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (currentUser) {
         setIsSyncing(true);
+
+        // 1. Fast Path: Yerel hafızada kayıt varsa 0 milisaniyede uygula (anında tiklensin!)
+        const fastLocal = getLocalUserProgress(currentUser.uid);
+        if (fastLocal) {
+          loadCloudProgress(fastLocal);
+        }
+
         try {
+          // 2. Bulut kontrolü ve senkronizasyonu
           const { data, isNewUser } = await loadUserProgressFromCloud(currentUser.uid);
           if (data && !isNewUser) {
-            // Existing user: Load their saved data
             loadCloudProgress(data);
           } else if (isNewUser) {
-            // New user: If they have guest progress on screen, save it to their account
             const currentScreen = useUserStore.getState();
             if (currentScreen.xp > 0 || Object.keys(currentScreen.completedChallenges).length > 0) {
               await saveUserProgressToCloud(currentUser.uid, currentScreen, {
@@ -72,10 +79,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             }
           }
         } catch (e) {
-          console.error("Giriş sonrası senkronizasyon hatası:", e);
+          console.error("Giriş senkronizasyon hatası:", e);
         } finally {
           setIsSyncing(false);
+          // Yükleme animasyonunun pürüzsüz görünmesi ve tatmin edici kapanması için minik bir gecikme
+          setTimeout(() => {
+            setIsSyncing(false);
+          }, 400);
         }
+      } else {
+        setIsSyncing(false);
       }
     });
 
@@ -103,6 +116,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             photoURL: result.user.photoURL,
           });
         }
+      } catch (e) {
+        console.warn("Giriş verisi okunamadı:", e);
       } finally {
         setIsSyncing(false);
       }
@@ -110,24 +125,33 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const logout = async () => {
-    // 1. Önce bu kullanıcının mevcut ilerlemesini kendi hesabına kaydet
-    if (user) {
-      const currentState = useUserStore.getState();
-      await saveUserProgressToCloud(user.uid, currentState, {
-        displayName: user.displayName,
-        email: user.email,
-        photoURL: user.photoURL,
-      });
-    }
-
-    // 2. Firebase oturumunu kapat
-    if (isFirebaseConfigured) {
-      await signOut(auth);
-    }
+    const currentUser = user;
+    
+    // 1. Ekranı ve oturum durumunu hemen sıfırla (Kullanıcı beklemesin)
     setUser(null);
+    setIsSyncing(false);
 
-    // 3. Ekranı misafir moduna (sıfıra) çek
-    useUserStore.getState().resetProgress();
+    try {
+      // 2. Kullanıcının mevcut ilerlemesini yerel hafızaya ve buluta hemen kaydet
+      if (currentUser) {
+        const currentState = useUserStore.getState();
+        saveUserProgressToCloud(currentUser.uid, currentState, {
+          displayName: currentUser.displayName,
+          email: currentUser.email,
+          photoURL: currentUser.photoURL,
+        }).catch(() => {});
+      }
+
+      // 3. Firebase oturumunu kapat
+      if (isFirebaseConfigured) {
+        await signOut(auth);
+      }
+    } catch (e) {
+      console.warn("Çıkış işlemi uyarısı:", e);
+    } finally {
+      // 4. Ekranı misafir moduna çek
+      useUserStore.getState().resetProgress();
+    }
   };
 
   const resetAccountProgress = async () => {
