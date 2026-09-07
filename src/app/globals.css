@@ -1,0 +1,431 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Warm Amber (Default) */
+  :root, [data-theme="warm-amber"] {
+    --bg-main: #121110;
+    --bg-surface: #181614;
+    --bg-elevated: #221f1b;
+    --border-color: rgba(245, 230, 211, 0.08);
+    --border-hover: rgba(245, 158, 11, 0.4);
+    --accent-color: #f59e0b;
+    --accent-secondary: #f97316;
+    --accent-glow: rgba(245, 158, 11, 0.25);
+    --text-primary: #f6f3ee;
+    --text-muted: #a8a196;
+    --ambient-glow: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(245, 158, 11, 0.07), transparent 70%),
+                   radial-gradient(ellipse 70% 40% at 85% 65%, rgba(249, 115, 22, 0.05), transparent 60%);
+  }
+
+  /* Cyber Emerald (Matrix / Hacker) */
+  [data-theme="cyber-emerald"] {
+    --bg-main: #070b09;
+    --bg-surface: #0c1410;
+    --bg-elevated: #131f19;
+    --border-color: rgba(16, 185, 129, 0.12);
+    --border-hover: rgba(16, 185, 129, 0.5);
+    --accent-color: #10b981;
+    --accent-secondary: #06b6d4;
+    --accent-glow: rgba(16, 185, 129, 0.25);
+    --text-primary: #f0fdf4;
+    --text-muted: #86efac;
+    --ambient-glow: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(16, 185, 129, 0.08), transparent 70%),
+                   radial-gradient(ellipse 70% 40% at 85% 65%, rgba(6, 182, 212, 0.05), transparent 60%);
+  }
+
+  /* Midnight Cyan (Linear / Deep Ocean) */
+  [data-theme="midnight-cyan"] {
+    --bg-main: #07090e;
+    --bg-surface: #0d111a;
+    --bg-elevated: #131926;
+    --border-color: rgba(56, 189, 248, 0.12);
+    --border-hover: rgba(56, 189, 248, 0.5);
+    --accent-color: #38bdf8;
+    --accent-secondary: #6366f1;
+    --accent-glow: rgba(56, 189, 248, 0.25);
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --ambient-glow: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(56, 189, 248, 0.08), transparent 70%),
+                   radial-gradient(ellipse 70% 40% at 85% 65%, rgba(99, 102, 241, 0.05), transparent 60%);
+  }
+
+  /* Sunset Rose (Neon Dusk / Synthwave) */
+  [data-theme="sunset-rose"] {
+    --bg-main: #110d13;
+    --bg-surface: #18121a;
+    --bg-elevated: #221826;
+    --border-color: rgba(244, 114, 182, 0.12);
+    --border-hover: rgba(244, 63, 94, 0.5);
+    --accent-color: #f43f5e;
+    --accent-secondary: #ec4899;
+    --accent-glow: rgba(244, 63, 94, 0.25);
+    --text-primary: #fdf2f8;
+    --text-muted: #f472b6;
+    --ambient-glow: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(244, 63, 94, 0.08), transparent 70%),
+                   radial-gradient(ellipse 70% 40% at 85% 65%, rgba(236, 72, 153, 0.05), transparent 60%);
+  }
+
+  /* Monochrome Slate (Titanium Minimalist) */
+  [data-theme="monochrome-slate"] {
+    --bg-main: #0c0e12;
+    --bg-surface: #14171d;
+    --bg-elevated: #1c212a;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(255, 255, 255, 0.4);
+    --accent-color: #e2e8f0;
+    --accent-secondary: #94a3b8;
+    --accent-glow: rgba(255, 255, 255, 0.15);
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --ambient-glow: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(255, 255, 255, 0.04), transparent 70%);
+  }
+
+  /* Clean Light (Nordic Slate / Modern Minimalist) */
+  [data-theme="clean-light"] {
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --border-color: rgba(15, 23, 42, 0.09);
+    --border-hover: rgba(2, 132, 199, 0.45);
+    --accent-color: #0284c7;
+    --accent-secondary: #4f46e5;
+    --accent-glow: rgba(2, 132, 199, 0.18);
+    --text-primary: #0f172a;
+    --text-muted: #64748b;
+    --ambient-glow: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(2, 132, 199, 0.07), transparent 70%),
+                   radial-gradient(ellipse 70% 40% at 85% 65%, rgba(79, 70, 229, 0.05), transparent 60%);
+  }
+
+  /* Warm Paper (Editorial Ivory / Warm Sunlight) */
+  [data-theme="warm-paper"] {
+    --bg-main: #fcfbf9;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f5f2eb;
+    --border-color: rgba(68, 51, 34, 0.11);
+    --border-hover: rgba(217, 119, 6, 0.45);
+    --accent-color: #d97706;
+    --accent-secondary: #ea580c;
+    --accent-glow: rgba(217, 119, 6, 0.18);
+    --text-primary: #292524;
+    --text-muted: #78716c;
+    --ambient-glow: radial-gradient(ellipse 90% 50% at 50% -10%, rgba(245, 158, 11, 0.08), transparent 70%),
+                   radial-gradient(ellipse 70% 40% at 85% 65%, rgba(234, 88, 12, 0.05), transparent 60%);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  ::selection {
+    background-color: var(--accent-glow);
+    color: #ffffff;
+  }
+}
+
+/* Dynamic Ambient Theme Background */
+.bg-ambient-theme {
+  background-color: var(--bg-main);
+  background-image: var(--ambient-glow);
+  background-size: 100% 100%;
+}
+
+/* Glassmorphic Specular Panels */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+    0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.glass-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
+    0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border-hover);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    0 12px 32px -4px rgba(0, 0, 0, 0.6),
+    0 0 20px -2px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Tactile Button Physics */
+.btn-glow-theme {
+  position: relative;
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+  color: #000000;
+  font-weight: 700;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-glow-theme:hover {
+  box-shadow: 0 0 25px -3px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn-glow-theme:active {
+  transform: scale(0.98);
+}
+
+/* Animations conforming to animate skill (transform & opacity only, hardware accelerated) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   LIGHT MODE ADAPTATION RULES
+   ========================================================================== */
+html.light {
+  color-scheme: light;
+}
+
+/* Light Glassmorphism & Elevation */
+html.light .glass-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    0 10px 30px -10px rgba(15, 23, 42, 0.06),
+    0 1px 3px 0 rgba(15, 23, 42, 0.04);
+}
+
+html.light .glass-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+html.light .glass-card:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border-hover);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 1),
+    0 12px 24px -4px rgba(15, 23, 42, 0.08),
+    0 0 15px -2px var(--accent-glow);
+}
+
+html.light .btn-glow-theme {
+  color: #ffffff;
+}
+
+/* Light Mode Custom Scrollbar */
+html.light .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.16);
+}
+html.light .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+/* Transparent white borders and surfaces mapped to Light Mode tokens */
+html.light .border-white\/\[0\.04\],
+html.light .border-white\/\[0\.06\],
+html.light .border-white\/\[0\.08\],
+html.light .border-white\/\[0\.1\],
+html.light .border-white\/\[0\.12\],
+html.light .border-white\/\[0\.15\],
+html.light .border-white\/\[0\.2\] {
+  border-color: var(--border-color) !important;
+}
+
+html.light .bg-white\/\[0\.02\],
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\],
+html.light .bg-white\/\[0\.05\],
+html.light .bg-white\/\[0\.06\] {
+  background-color: var(--bg-elevated) !important;
+}
+
+html.light .bg-white\/\[0\.08\],
+html.light .bg-white\/\[0\.1\],
+html.light .bg-white\/\[0\.12\] {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+
+html.light .hover\:bg-white\/\[0\.04\]:hover,
+html.light .hover\:bg-white\/\[0\.06\]:hover,
+html.light .hover\:bg-white\/\[0\.08\]:hover,
+html.light .hover\:bg-white\/\[0\.1\]:hover {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Black overlays in Light Mode */
+html.light .bg-black\/30,
+html.light .bg-black\/40,
+html.light .bg-black\/50,
+html.light .bg-black\/60,
+html.light .bg-black\/70,
+html.light .bg-black\/80,
+html.light .bg-black\/90 {
+  background-color: var(--bg-elevated) !important;
+}
+
+/* Hardcoded Dark Hex Backgrounds mapped to Light Mode */
+html.light .bg-\[\#121110\],
+html.light .bg-\[\#141210\],
+html.light .bg-\[\#110f0e\] {
+  background-color: var(--bg-main) !important;
+}
+
+html.light .bg-\[\#161412\],
+html.light .bg-\[\#181614\],
+html.light .bg-\[\#1a1816\],
+html.light .bg-\[\#171513\] {
+  background-color: var(--bg-surface) !important;
+}
+
+html.light .bg-\[\#221f1b\],
+html.light .bg-\[\#1e1b17\],
+html.light .bg-\[\#2c2823\],
+html.light .bg-\[\#332e28\] {
+  background-color: var(--bg-elevated) !important;
+}
+
+/* Hardcoded Dark Hex Borders mapped to Light Mode */
+html.light .border-\[\#26221d\],
+html.light .border-\[\#2c2823\],
+html.light .border-\[\#2e2a24\],
+html.light .border-\[\#24201c\],
+html.light .border-\[\#282420\],
+html.light .border-\[\#221e1a\],
+html.light .border-\[\#332e28\],
+html.light .border-slate-800,
+html.light .border-slate-700 {
+  border-color: var(--border-color) !important;
+}
+
+/* Hardcoded Text Colors mapped to Light Mode */
+html.light .text-\[\#f6f3ee\],
+html.light .text-\[\#e6e0d6\] {
+  color: var(--text-primary) !important;
+}
+
+html.light .text-\[\#c8c1b5\],
+html.light .text-\[\#a8a196\],
+html.light .text-\[\#8c8477\],
+html.light .text-\[\#736c61\],
+html.light .text-\[\#5a5349\] {
+  color: var(--text-muted) !important;
+}
+
+/* Slate Dark Backgrounds mapped to Light Mode */
+html.light .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-slate-850 {
+  background-color: var(--bg-surface) !important;
+}
+
+/* Interactive Hover States */
+html.light .hover\:bg-\[\#2c2823\]:hover,
+html.light .hover\:bg-\[\#24201c\]:hover,
+html.light .hover\:bg-\[\#221f1b\]:hover,
+html.light .hover\:bg-\[\#201d19\]:hover,
+html.light .hover\:bg-\[\#1f1c19\]:hover {
+  background-color: var(--bg-elevated) !important;
+}
+
+/* Table Row Stripes in Light Mode */
+html.light .odd\:bg-\[\#141210\]:nth-child(odd) {
+  background-color: #ffffff !important;
+}
+html.light .even\:bg-\[\#181614\]:nth-child(even) {
+  background-color: #f8fafc !important;
+}
+
+html.light .divide-\[\#24201c\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-color) !important;
+}
+
