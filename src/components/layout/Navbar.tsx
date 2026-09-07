@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useUserStore, isLightTheme } from "@/lib/state/user-store";
 import { ThemeSwitcher } from "@/components/layout/ThemeSwitcher";
+import { UserMenu } from "@/components/auth/UserMenu";
 import { soundEffects } from "@/lib/audio/sound-effects";
 import {
   Flame,
@@ -158,6 +159,9 @@ export function Navbar() {
             <VolumeX className="w-4 h-4 opacity-50" />
           )}
         </button>
+
+        {/* User Auth Menu */}
+        <UserMenu />
       </div>
     </header>
   );

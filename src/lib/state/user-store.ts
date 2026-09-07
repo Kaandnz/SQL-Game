@@ -57,6 +57,7 @@ export interface UserStoreState {
   toggleLightDarkMode: () => AppTheme;
   setActiveDatasetId: (id: string) => void;
   resetProgress: () => void;
+  loadCloudProgress: (cloudData: Partial<UserStoreState>) => void;
 }
 
 function calculateLevel(xp: number): number {
@@ -232,10 +233,41 @@ export const useUserStore = create<UserStoreState>()(
           soundEffects.playSuccess();
         }
 
+        // Buluta arka planda otomatik kaydet (kullanıcı giriş yapmışsa)
+        if (typeof window !== "undefined") {
+          import("../firebase/client")
+            .then(({ auth, isFirebaseConfigured }) => {
+              if (isFirebaseConfigured && auth.currentUser) {
+                import("../firebase/sync").then(({ saveUserProgressToCloud }) => {
+                  saveUserProgressToCloud(auth.currentUser!.uid, get());
+                });
+              }
+            })
+            .catch(() => {});
+        }
+
         return {
           newLevelUnlocked: levelUp,
           newAchievements: newlyUnlockedAchievements,
         };
+      },
+
+      loadCloudProgress: (cloudData: Partial<UserStoreState>) => {
+        set((state) => ({
+          ...state,
+          ...cloudData,
+          xp: cloudData.xp ?? 0,
+          level: cloudData.level ?? 1,
+          currentStreak: cloudData.currentStreak ?? 1,
+          longestStreak: cloudData.longestStreak ?? 1,
+          lastActiveDate: cloudData.lastActiveDate ?? null,
+          completedChallenges: cloudData.completedChallenges ?? {},
+          unlockedWorlds:
+            cloudData.unlockedWorlds && cloudData.unlockedWorlds.length > 0
+              ? cloudData.unlockedWorlds
+              : [1],
+          unlockedAchievements: cloudData.unlockedAchievements ?? [],
+        }));
       },
 
       resetProgress: () => {
