@@ -47,7 +47,7 @@ export default function AchievementsPage() {
   const handleReset = () => {
     if (
       window.confirm(
-        "Tüm oyun ilerlemenizi, XP ve başarımlarınızı sıfırlamak istediğinizden emin misiniz?"
+        "Tüm analitik çalışma verilerinizi, yetkinlik puanlarınızı ve başarımları sıfırlamak istediğinizden emin misiniz?"
       )
     ) {
       resetProgress();

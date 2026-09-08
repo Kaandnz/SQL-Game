@@ -55,7 +55,7 @@ export function validateSafeQuery(sql: string): SecurityCheckResult {
     return {
       isSafe: false,
       violationMessage:
-        "Güvenlik Politikası: Oyun modunda yalnızca veri okuma (SELECT / WITH) sorgularına izin verilmektedir.",
+        "Güvenlik Politikası: Analiz ortamında yalnızca salt-okunur (SELECT / WITH / EXPLAIN) sorgularına izin verilmektedir.",
     };
   }
 

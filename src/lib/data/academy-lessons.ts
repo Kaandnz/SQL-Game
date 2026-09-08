@@ -161,7 +161,7 @@ export const ACADEMY_LESSONS: AcademyLesson[] = [
         },
         {
           title: "Seviye 4: Hata Avcısı — Çoklu Kolonda DISTINCT Yanılgısı",
-          description: "Acemi geliştiriciler DISTINCT'in sadece yanındaki ilk kolona etki ettiğini sanır.",
+          description: "Geliştiricilerin sık düştüğü yanılgı: DISTINCT'in yalnızca yanındaki ilk kolona etki ettiği varsayılır.",
           sql: "SELECT DISTINCT city, first_name\nFROM customers\nORDER BY city\nLIMIT 6;",
           explanation: "DISTINCT tek bir kolona değil; (city + first_name) ikilisinin tamamına uygulanır. Aynı şehirde iki farklı Ahmet varsa ikisi de listelenir!",
           level: "Hata Avcısı",
@@ -2282,7 +2282,7 @@ export const ACADEMY_LESSONS: AcademyLesson[] = [
       "Yazdığınız bir sorgunun veritabanındaki indeksleri kullanıp kullanmadığını (SARGable olup olmadığını) belirler. Yanlış yazılmış tek bir WHERE koşulu 10 milyon satırlık indeksi çöpe atıp sunucuyu kilitleyebilir.",
     deepDive: {
       whyNeeded:
-        "Harika indeksler kursanız bile acemi bir yazılımcı 'WHERE price * 1.2 > 1000' yazdığı anda motor kolondaki indeksi terk eder ve 10 milyon satırı tek tek çarpmaya başlar. SARGable kuralı kolonu daima çıplak bırakmayı emreder.",
+        "Harika indeksler kursanız bile dikkatsizce yazılan bir 'WHERE price * 1.2 > 1000' ifadesi motorun kolondaki indeksi terk etmesine ve milyonlarca satırı tek tek taramasına yol açar. SARGable kuralı kolonu daima yalın bırakmayı gerektirir.",
       howItWorksStepByStep: [
         "1. Motor WHERE koşulunu inceler.",
         "2. Sol taraftaki kolon tek başına çıplaksa (fonksiyonsuz ve işlemsiz) B-Tree aralığı tetiklenir (Index Scan).",
@@ -2389,7 +2389,7 @@ export const ACADEMY_LESSONS: AcademyLesson[] = [
       whenToUse: [
         "Siber güvenlik log incelemesi (Brute Force tespiti).",
         "Banka kara para aklama (AML) ve fraud tespiti.",
-        "SQL Dedektiflik soruşturmaları.",
+        "Adli bilişim ve olay yeri veri analitiği vakaları.",
       ],
       whenNotToUse: [
         "Zaman dilimlerini (Timezone) hesaba katmadan sorgu yazmayın; UTC ve yerel saat farkları delili bozabilir.",
@@ -2399,7 +2399,7 @@ export const ACADEMY_LESSONS: AcademyLesson[] = [
       introduction:
         "Siber güvenlik analistleri ve adli bilişim uzmanları saldırganların izini sürmek için gelişmiş SQL tekniklerini birleştirir: CTE zincirleri, Window Functions ile ardışık denemelerin tespiti ve çok tablolu korelasyonlar.",
       mentalModel:
-        "Bir dedektif masasında olay yeri fotoğrafları, şüpheli ifadeleri ve kamera kayıtlarını kırmızı iplerle birbirine bağlar. SQL'deki her JOIN ve CTE bu kırmızı iplerden biridir; sonunda tek bir şüpheliye işaret eder.",
+        "Adli inceleme masasında log kayıtları, işlem hareketleri ve şüpheli profilleri korelasyon hatlarıyla birbirine bağlanır. SQL'deki her JOIN ve CTE bu doğrulama hatlarından biridir; veriyi tek bir kesin sonuca odaklar.",
       syntaxDiagram:
         "SELECT s.name, s.plate_number, l.checkpoint, l.entry_time\nFROM suspects s\nINNER JOIN security_logs l ON s.id = l.suspect_id\nWHERE s.hair_color = 'black'\nORDER BY l.entry_time DESC;",
       examples: [

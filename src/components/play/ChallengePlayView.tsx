@@ -201,10 +201,10 @@ export function ChallengePlayView() {
             <div className="flex items-center gap-2 text-[#8c8477]">
               <Link href="/" className="hover:text-[#f6f3ee] flex items-center gap-1 font-medium">
                 <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Harita</span>
+                <span>Müfredat</span>
               </Link>
               <ChevronRight className="w-3 h-3 text-[#4a443b]" />
-              <span className="font-mono font-bold text-amber-400">World {world?.id || 1}</span>
+              <span className="font-mono font-bold text-amber-400">Modül {world?.id || 1}</span>
               <ChevronRight className="w-3 h-3 text-[#4a443b]" />
               <span className="text-[#c8c1b5] font-semibold truncate max-w-[200px]">
                 {challenge.title}
@@ -232,7 +232,13 @@ export function ChallengePlayView() {
                     : "text-purple-400 bg-purple-500/20 border border-purple-500/30 animate-pulse"
                 }`}
               >
-                {challenge.difficulty}
+                {challenge.difficulty === "easy"
+                  ? "Başlangıç"
+                  : challenge.difficulty === "medium"
+                  ? "Orta Düzey"
+                  : challenge.difficulty === "hard"
+                  ? "İleri Düzey"
+                  : "Kapsamlı Denetim"}
               </span>
 
               <span className="flex items-center gap-1 text-[11px] font-mono font-bold text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-md border border-amber-500/20">

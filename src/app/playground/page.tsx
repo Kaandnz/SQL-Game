@@ -112,10 +112,10 @@ export default function PlaygroundPage() {
           <div className="space-y-1">
             <div className="flex items-center gap-2 text-amber-400 font-mono text-xs font-bold">
               <Terminal className="w-4 h-4" />
-              <span>SQL PLAYGROUND (SERBEST KUM HAVUZU)</span>
+              <span>SQL SANDBOX & SORGULAMA KONSOLU</span>
             </div>
             <p className="text-xs text-[#a8a196]">
-              İstediğiniz PostgreSQL sorgusunu dilediğiniz veri setinde serbestçe çalıştırın.
+              İlişkisel veritabanı şemalarını doğrudan sorgulayın, özel metrikler türetin ve indeks davranışlarını test edin.
             </p>
           </div>
 

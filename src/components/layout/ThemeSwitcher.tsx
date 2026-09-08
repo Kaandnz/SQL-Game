@@ -25,7 +25,7 @@ const THEME_OPTIONS: ThemeOption[] = [
     id: "cyber-emerald",
     name: "Siber Matrix",
     dotColor: "bg-emerald-400",
-    description: "Derin siyah & neon yeşil dedektiflik",
+    description: "Derin siyah & neon yeşil terminal",
   },
   {
     id: "midnight-cyan",

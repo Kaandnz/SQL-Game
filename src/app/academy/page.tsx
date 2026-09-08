@@ -607,7 +607,7 @@ export default function AcademyPage() {
                   <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/25 space-y-2">
                     <div className="flex items-center gap-1.5 text-rose-400 font-bold text-xs">
                       <AlertTriangle className="w-4 h-4" />
-                      <span>Sık Yapılan Acemi Hataları</span>
+                      <span>Sık Yapılan Kritik Hatalar & Anti-Pattern&apos;ler</span>
                     </div>
                     <div className="text-xs text-rose-200 leading-relaxed space-y-1.5 font-sans">
                       {lesson.content.commonPitfalls.map((pit, idx) => (
@@ -846,10 +846,10 @@ export default function AcademyPage() {
               <div className="p-5 rounded-2xl bg-white/[0.03] border border-[#2c2823] flex items-center justify-between flex-wrap gap-4 shadow-lg">
                 <div className="space-y-0.5">
                   <span className="text-xs font-bold text-[#f6f3ee] block font-sans">
-                    Bu Konudaki Adli Soruşturmaya Geç: {firstChallenge.title}
+                    Bu Konudaki Uygulamalı Analitik Vakaya Geç: {firstChallenge.title}
                   </span>
                   <span className="text-xs text-[#a8a196] font-sans">
-                    Öğrendiklerinizi gerçek adli soruşturma ve dedektiflik vakası üzerinde uygulayın.
+                    Öğrendiklerinizi gerçek veri kümeleri ve analitik vaka çalışması üzerinde test edin.
                   </span>
                 </div>
 
@@ -857,7 +857,7 @@ export default function AcademyPage() {
                   href={`/play/${firstChallenge.id}`}
                   className="px-5 py-2.5 rounded-xl btn-glow-theme text-xs flex items-center gap-1.5 transition-all shadow-md active:scale-95 shrink-0 font-sans font-bold"
                 >
-                  <span>Soruşturmaya Başla</span>
+                  <span>Vakayı Çözmeye Başla</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

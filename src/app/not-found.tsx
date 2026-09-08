@@ -14,7 +14,7 @@ export default function NotFound() {
       <div className="space-y-1">
         <h2 className="text-xl font-bold text-white">Sayfa veya Dosya Bulunamadı</h2>
         <p className="text-xs text-slate-400 max-w-sm">
-          Aradığınız dedektiflik soruşturması veya sayfa veritabanında mevcut değil.
+          Aradığınız analiz sayfası veya vaka kaydı sistemde bulunamadı.
         </p>
       </div>
 
@@ -23,7 +23,7 @@ export default function NotFound() {
         className="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold inline-flex items-center gap-2"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
-        <span>Ana Merkeze Dön</span>
+        <span>Ana Sayfaya Dön</span>
       </Link>
     </div>
   );

@@ -425,7 +425,13 @@ export default function HomePage() {
                                         : "text-purple-400 bg-purple-500/15 border border-purple-500/30"
                                     }`}
                                   >
-                                    {challenge.difficulty}
+                                    {challenge.difficulty === "easy"
+                                      ? "Başlangıç"
+                                      : challenge.difficulty === "medium"
+                                      ? "Orta"
+                                      : challenge.difficulty === "hard"
+                                      ? "İleri"
+                                      : "Vaka Denetimi"}
                                   </span>
                                 </Link>
                               );

@@ -151,7 +151,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           )}
 
           <p className="text-[11px] text-center text-[var(--text-muted)] mt-2">
-            Giriş yapmadan misafir olarak oynamaya dilediğiniz gibi devam edebilirsiniz.
+            Giriş yapmadan misafir olarak platformu deneyimlemeye dilediğiniz gibi devam edebilirsiniz.
           </p>
         </div>
       </div>

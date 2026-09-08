@@ -62,7 +62,7 @@ export function Navbar() {
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-xs tracking-wider text-[var(--text-primary)] font-mono">
-                SQL_DETECTIVE
+                SQL_STUDIO
               </span>
               <span className="hidden sm:inline-flex items-center gap-1 text-[9px] uppercase font-mono font-bold px-1.5 py-0.5 rounded-full bg-white/[0.06] text-[var(--accent-color)] border border-white/[0.1]">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -70,7 +70,7 @@ export function Navbar() {
               </span>
             </div>
             <span className="text-[10px] text-[var(--text-muted)] font-sans tracking-tight">
-              Interactive Forensics Engine
+              PostgreSQL Analytics & Forensics Engine
             </span>
           </div>
         </Link>

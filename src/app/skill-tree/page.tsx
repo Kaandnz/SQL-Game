@@ -95,11 +95,11 @@ export default function SkillTreePage() {
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] font-mono text-amber-400 font-bold">
-                          WORLD {world.id}
+                          MODÜL {world.id}
                         </span>
                         <span className="text-xs text-[#736c61] font-mono">•</span>
                         <span className="text-xs text-[#a8a196] font-mono">
-                          {worldChallenges.length} Görev ({solvedInWorld} Tamamlandı)
+                          {worldChallenges.length} Analitik Vaka ({solvedInWorld} Tamamlandı)
                         </span>
                       </div>
                       <h3 className="text-base font-bold text-[#f6f3ee]">{world.title}</h3>
@@ -118,7 +118,7 @@ export default function SkillTreePage() {
                         }`}
                       >
                         <Play className="w-3.5 h-3.5 fill-current" />
-                        <span>{isCompleted ? "Tekrar İncele" : "Bölümü Oyna"}</span>
+                        <span>{isCompleted ? "Tekrar İncele" : "Vakayı Başlat"}</span>
                       </Link>
                     )}
                   </div>

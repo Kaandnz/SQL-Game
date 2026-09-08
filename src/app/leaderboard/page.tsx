@@ -218,8 +218,8 @@ export default function LeaderboardPage() {
                   <thead className="text-[#8c8477] text-[11px] border-b border-[#26221d]">
                     <tr>
                       <th className="py-2.5 px-3">#</th>
-                      <th className="py-2.5 px-3">Dedektif</th>
-                      <th className="py-2.5 px-3">Seviye</th>
+                      <th className="py-2.5 px-3">Analist</th>
+                      <th className="py-2.5 px-3">Kademe</th>
                       <th className="py-2.5 px-3">Vaka</th>
                       <th className="py-2.5 px-3">Seri</th>
                       <th className="py-2.5 px-3 text-right">XP</th>

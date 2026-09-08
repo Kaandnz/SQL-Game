@@ -5,9 +5,9 @@ import { AuthProvider } from "@/lib/firebase/auth-context";
 import { AuthLoadingOverlay } from "@/components/auth/AuthLoadingOverlay";
 
 export const metadata: Metadata = {
-  title: "SQL Quest: Data Detective | İnteraktif SQL Öğrenme Oyunu",
+  title: "SQL Studio | İnteraktif PostgreSQL & Veri Analitiği Platformu",
   description:
-    "PostgreSQL sorguları yazarak veritabanı dedektifliği yapın, seviye atlayın ve SQL uzmanı olun.",
+    "Gerçek PostgreSQL çekirdeği üzerinde çalışan etkileşimli vakalar, e-ticaret metrikleri, finansal denetim ve adli bilişim senaryolarıyla ileri düzey SQL yetkinliği kazanın.",
 };
 
 export default function RootLayout({
