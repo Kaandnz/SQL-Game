@@ -72,7 +72,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: "boss_slayer",
     title: "Adli Bilişim Denetçisi",
-    description: "Büyük adli soruşturma vakalarından (World 15) en az birini başarıyla tamamla.",
+    description: "İleri düzey adli denetim vakalarından (Modül 15) en az birini başarıyla tamamla.",
     icon: "Crown",
     category: "special",
     condition: (state) => {

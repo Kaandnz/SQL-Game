@@ -1248,7 +1248,7 @@ export const ACADEMY_LESSONS: AcademyLesson[] = [
     subtitle: "Eşleşmeyen satırları kaybetmeden NULL ile koruyarak birleştirme.",
     category: "Intermediate",
     readTime: "6 Dakika",
-    summary: "LEFT JOIN, sol tablodaki TÜM satırları korur. Sağ tabloda eşleşme yoksa o kolonlar NULL olarak doldurulur. 'Hiç sipariş vermemiş müşterileri' bulmak için harikadır.",
+    summary: "LEFT JOIN, sol tablodaki TÜM satırları korur. Sağ tabloda eşleşme yoksa o kolonlar NULL olarak doldurulur. 'Hiç sipariş vermemiş müşterileri' bulmak ve veri eksikliklerini analiz etmek için standart kurumsal yaklaşımdır.",
     datasetId: "ecommerce",
     visualType: "joins",
     whatItDoes:
@@ -2307,7 +2307,7 @@ export const ACADEMY_LESSONS: AcademyLesson[] = [
     },
     content: {
       introduction:
-        "Harika indeksler kursanız bile yanlış yazılmış bir WHERE koşulu indeksi çöpe atabilir. 'WHERE YEAR(created_at) = 2024' yazdığınızda motor her satır için fonksiyon çalıştırmak zorunda kalır ve indeksi terk eder.",
+        "Kapsamlı indeks mimarileri oluştursanız bile optimize edilmemiş bir WHERE koşulu indeksin devre dışı kalmasına yol açabilir. 'WHERE YEAR(created_at) = 2024' yazdığınızda motor her satır için fonksiyon çalıştırmak zorunda kalır ve Sequential Scan'e düşer.",
       mentalModel:
         "Fihristte 'Ahmet' ismini arıyorsunuz. Biri size 'İsminin ilk harfi A olanları bul' derse fihristi kullanırsınız (SARGable). Ama 'İsminin harf sayısı 5 olanları bul' derse tüm fihristi baştan sona tek tek saymak zorunda kalırsınız (Non-SARGable).",
       lifecycleDiagram:
