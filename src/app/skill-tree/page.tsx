@@ -32,13 +32,13 @@ export default function SkillTreePage() {
         <div className="space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
             <GitBranch className="w-3.5 h-3.5" />
-            <span>SQL YETENEK & BECERİ AĞACI</span>
+            <span>SQL YETKİNLİK & MİMARİ AĞACI</span>
           </div>
           <h1 className="text-2xl md:text-3xl font-extrabold text-[#f6f3ee]">
-            SQL Ustalık Haritası
+            Teknik Yetkinlik Yol Haritası
           </h1>
           <p className="text-xs md:text-sm text-[#a8a196]">
-            Temel sorgulardan başlayarak ön koşulları tamamla ve ileri seviye SQL düğümlerini aç.
+            Temel sorgulardan başlayarak ön koşul modüllerini tamamlayın ve ileri düzey analitik düğümlerini açın.
           </p>
         </div>
 

@@ -248,7 +248,7 @@ export function ChallengePlayView() {
               {challenge.title}
             </h1>
             <p className="text-xs md:text-sm text-[#c8c1b5] leading-relaxed bg-[#110f0e]/80 p-3.5 rounded-xl border border-[#24201c]">
-              🕵️ <span className="font-bold text-amber-400">Vaka Dosyası: </span>
+              📋 <span className="font-bold text-amber-400">Senaryo & Vaka Brifingi: </span>
               {challenge.story}
             </p>
           </div>
@@ -257,14 +257,14 @@ export function ChallengePlayView() {
           <div className="p-3.5 rounded-xl bg-gradient-to-r from-amber-950/30 to-orange-950/20 border border-amber-500/30 flex items-start gap-2.5 shadow-sm">
             <Target className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
             <div className="text-xs">
-              <span className="font-extrabold text-amber-300 block mb-0.5">Hedef SQL Sorgusu:</span>
+              <span className="font-extrabold text-amber-300 block mb-0.5">Hedef Analitik Çıktı:</span>
               <p className="text-[#e6e0d6] leading-normal">{challenge.objective}</p>
             </div>
           </div>
 
           {/* Concepts Tags */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] text-[#736c61] font-bold uppercase font-mono">İlgili Konular:</span>
+            <span className="text-[10px] text-[#736c61] font-bold uppercase font-mono">Yetkinlikler:</span>
             {challenge.concepts.map((concept, idx) => (
               <span
                 key={idx}

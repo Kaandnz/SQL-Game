@@ -30,10 +30,10 @@ export function AuthLoadingOverlay() {
         <div className="space-y-1">
           <div className="flex items-center justify-center gap-1.5 text-amber-400 font-bold text-sm tracking-tight">
             <Sparkles className="w-4 h-4 text-amber-500" />
-            <span>Dedektif Profili Yükleniyor</span>
+            <span>Analitik Profil Yükleniyor</span>
           </div>
           <p className="text-xs text-[var(--text-secondary)]">
-            Çözülmüş görevleriniz ve XP verileriniz eşitleniyor...
+            Tamamlanan senaryolarınız ve çalışma verileriniz senkronize ediliyor...
           </p>
         </div>
 

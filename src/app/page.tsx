@@ -54,7 +54,7 @@ const ICON_MAP: Record<string, any> = {
 const WORKSTATION_SCENARIOS = [
   {
     id: "fraud",
-    title: "01. Şüpheli Transferler",
+    title: "01. Finansal Transfer Anomalisi",
     badge: "Fintech Forensics",
     sql: `SELECT u.full_name, t.amount, t.created_at
 FROM transactions t
@@ -69,8 +69,8 @@ WHERE t.amount >= 150000;`,
   },
   {
     id: "vip",
-    title: "02. VIP Gelir Analizi",
-    badge: "E-Commerce",
+    title: "02. Müşteri Segmentasyonu",
+    badge: "E-Commerce Analytics",
     sql: `WITH customer_spent AS (
   SELECT customer_id, SUM(total_amount) AS total
   FROM orders GROUP BY customer_id
@@ -85,8 +85,8 @@ WHERE total > 50000;`,
   },
   {
     id: "murder",
-    title: "03. Olay Yeri Soruşturması",
-    badge: "Murder Mystery",
+    title: "03. Erişim Günlükleri & Güvenlik",
+    badge: "Forensic Audit",
     sql: `SELECT s.name, s.plate_number
 FROM suspects s
 JOIN security_logs l ON s.id = l.suspect_id
@@ -118,28 +118,28 @@ export default function HomePage() {
 
   const chapters = [
     {
-      act: "PERDE I",
+      act: "BÖLÜM I",
       category: "Fundamentals",
-      title: "TEMEL VERİ SORGULAMA",
-      desc: "SELECT, WHERE filtreleme, sıralama ve veri temizleme temelleri.",
+      title: "TEMEL VERİ SORGULAMA & PROJEKSİYON",
+      desc: "SELECT, WHERE koşullu filtreleme, sıralama ve veri temizleme temelleri.",
     },
     {
-      act: "PERDE II",
+      act: "BÖLÜM II",
       category: "Intermediate",
-      title: "İLİŞKİSEL İSTİHBARAT & GROUP BY",
-      desc: "Aggregation, GROUP BY, JOIN Krallığı, CASE ve Subquery mimarisi.",
+      title: "İLİŞKİSEL MODELLEME & AGREGASYON",
+      desc: "Metrik agregasyonu, GROUP BY, çoklu JOIN mimarisi, CASE WHEN ve alt sorgular.",
     },
     {
-      act: "PERDE III",
+      act: "BÖLÜM III",
       category: "Advanced",
-      title: "İLERİ DÜZEY ANALİTİK & WINDOW FUNCTIONS",
-      desc: "SET operatörleri, tarih analitiği, CTE (WITH) ve Window Functions.",
+      title: "İLERİ DÜZEY ANALİTİK & PENCERE FONKSİYONLARI",
+      desc: "SET küme operatörleri, zaman serisi analitiği, CTE (WITH) ve Window Functions.",
     },
     {
-      act: "PERDE IV",
+      act: "BÖLÜM IV",
       category: "Mastery",
-      title: "BÜYÜK BOSS SORUŞTURMALARI",
-      desc: "Çok tablolu siber saldırı, finansal fraud ve adli cinayet soruşturmaları.",
+      title: "ADLİ BİLİŞİM & KURUMSAL DENETİM VAKALARI",
+      desc: "Çok tablolu fintech transfer anomalileri, siber güvenlik logları ve adli vaka çözümü.",
     },
   ];
 
@@ -157,14 +157,14 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[var(--text-primary)] tracking-tight leading-[1.1]">
-                SQL'i Ezberleme. <br />
+                Veriyi Pasif İzleme. <br />
                 <span className="bg-gradient-to-r from-[var(--accent-color)] via-[var(--text-primary)] to-[var(--accent-secondary)] bg-clip-text text-transparent">
-                  Dedektif Gibi Sorgula.
+                  Doğrudan Sorgula.
                 </span>
               </h1>
 
               <p className="text-sm md:text-base text-[var(--text-muted)] max-w-lg leading-relaxed font-sans">
-                Gerçek şirket veri setleri ve adli soruşturmalar üzerinde SELECT'ten Window Functions ve Recursive CTE'lere kadar sorgular yazarak uzmanlaşın.
+                PostgreSQL 16 WASM çekirdeği üzerinde çalışan etkileşimli vakalar: E-ticaret metriklerinden adli bilişim loglarına ve fintech anomali tespitine kadar sektörel senaryolarla sorgulama yetkinliğinizi geliştirin.
               </p>
 
               {/* CTAs */}
@@ -174,7 +174,7 @@ export default function HomePage() {
                   className="px-6 py-3.5 rounded-xl btn-glow-theme flex items-center gap-2 text-xs transition-all"
                 >
                   <Play className="w-4 h-4 fill-current" />
-                  <span>{solvedCount > 0 ? "Kaldığın Yerden Devam Et" : "İlk Soruşturmayı Başlat"}</span>
+                  <span>{solvedCount > 0 ? "Kaldığın Yerden Devam Et" : "İlk Senaryoyu Başlat"}</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
@@ -246,7 +246,7 @@ export default function HomePage() {
                   <Trophy className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-[var(--text-muted)] block">DEDEKTİF SEVİYESİ</span>
+                  <span className="text-[10px] text-[var(--text-muted)] block">ANALİST KADEMESİ</span>
                   <span className="text-base font-extrabold text-[var(--text-primary)]">Lvl {level}</span>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function HomePage() {
                   <Zap className="w-4 h-4 fill-current" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-[var(--text-muted)] block">TOPLAM PUAN</span>
+                  <span className="text-[10px] text-[var(--text-muted)] block">ANALİTİK SKOR</span>
                   <span className="text-base font-extrabold text-[var(--accent-color)]">{xp} XP</span>
                 </div>
               </div>
@@ -266,7 +266,7 @@ export default function HomePage() {
                   <Flame className="w-4 h-4 fill-current" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-[var(--text-muted)] block">GÜNLÜK SERİ</span>
+                  <span className="text-[10px] text-[var(--text-muted)] block">ÇALIŞMA SERİSİ</span>
                   <span className="text-base font-extrabold text-amber-400">{currentStreak} Gün</span>
                 </div>
               </div>
@@ -276,7 +276,7 @@ export default function HomePage() {
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-[var(--text-muted)] block">İLERLEME</span>
+                  <span className="text-[10px] text-[var(--text-muted)] block">MÜFREDAT İLERLEMESİ</span>
                   <span className="text-base font-extrabold text-[var(--text-primary)]">
                     {solvedCount}/{totalChallengesCount} ({overallProgressPercent}%)
                   </span>
@@ -291,10 +291,10 @@ export default function HomePage() {
           <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
             <div>
               <h2 className="text-xl font-extrabold text-[var(--text-primary)] tracking-wide font-sans">
-                15 DÜNYALIK DEDEKTİFLİK MÜFREDATI
+                15 DÜZEYLİ UYGULAMALI SQL MÜFREDATI
               </h2>
               <p className="text-xs text-[var(--text-muted)] mt-0.5">
-                Aşamalı zorluk, gerçek veritabanı şemaları ve vaka dosyaları
+                Aşamalı zorluk, endüstri standardı ilişkisel şemalar ve adli vaka analizleri
               </p>
             </div>
             <Link

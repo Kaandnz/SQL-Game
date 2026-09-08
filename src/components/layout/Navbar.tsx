@@ -43,12 +43,12 @@ export function Navbar() {
   }, [checkAndUpdateStreak]);
 
   const navItems = [
-    { href: "/", label: "Görevler", icon: Compass },
+    { href: "/", label: "Müfredat", icon: Compass },
     { href: "/academy", label: "Akademi", icon: GraduationCap },
-    { href: "/skill-tree", label: "Skill Tree", icon: GitBranch },
-    { href: "/playground", label: "Playground", icon: Terminal },
-    { href: "/leaderboard", label: "Liderlik", icon: Medal },
-    { href: "/achievements", label: "Başarımlar", icon: Trophy },
+    { href: "/skill-tree", label: "Yol Haritası", icon: GitBranch },
+    { href: "/playground", label: "SQL Konsol", icon: Terminal },
+    { href: "/leaderboard", label: "Sıralama", icon: Medal },
+    { href: "/achievements", label: "Yetkinlikler", icon: Trophy },
   ];
 
   return (

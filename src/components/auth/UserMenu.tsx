@@ -101,7 +101,7 @@ export function UserMenu() {
           </div>
         )}
         <span className="text-xs font-medium text-[var(--text-primary)] max-w-[90px] truncate hidden md:inline">
-          {user.displayName?.split(" ")[0] || "Dedektif"}
+          {user.displayName?.split(" ")[0] || "Analist"}
         </span>
         <ChevronDown className="w-3 h-3 text-[var(--text-muted)]" />
       </button>
@@ -112,7 +112,7 @@ export function UserMenu() {
           {/* User Info Header */}
           <div className="p-2 border-b border-[var(--border-subtle)] mb-2">
             <p className="text-sm font-semibold text-[var(--text-primary)] truncate">
-              {user.displayName || "SQL Dedektifi"}
+              {user.displayName || "SQL Analisti"}
             </p>
             <p className="text-xs text-[var(--text-muted)] truncate">
               {user.email}
@@ -120,7 +120,7 @@ export function UserMenu() {
             <div className="mt-2.5 flex items-center justify-between text-xs bg-[var(--bg-card)] px-2.5 py-1.5 rounded-lg border border-[var(--border-subtle)]">
               <span className="text-[var(--text-secondary)] flex items-center gap-1.5 font-medium">
                 <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                Seviye {level}
+                Kademe {level}
               </span>
               <span className="font-mono text-amber-500 font-bold">
                 {xp} XP

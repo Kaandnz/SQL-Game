@@ -83,10 +83,10 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
             <Sparkles className="w-7 h-7 text-amber-500" />
           </div>
           <h2 className="text-2xl font-bold text-[var(--text-primary)] tracking-tight">
-            SQL Quest Dedektif Kulübü
+            SQL Analitik Hesabı
           </h2>
           <p className="text-xs md:text-sm text-[var(--text-secondary)] mt-1.5">
-            İlerlemeni kaydet ve her cihazdan kesintisiz devam et
+            Çalışma geçmişinizi senkronize edin ve her cihazdan kesintisiz devam edin
           </p>
         </div>
 
@@ -94,11 +94,11 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         <div className="space-y-2.5 mb-6 bg-[var(--bg-card)]/70 border border-[var(--border-subtle)] p-4 rounded-2xl">
           <div className="flex items-center gap-3 text-xs text-[var(--text-secondary)]">
             <Cloud className="w-4 h-4 text-emerald-500 shrink-0" />
-            <span>Tüm çözümlerin ve kazandığın XP bulutta saklanır.</span>
+            <span>Tüm tamamlanan senaryolarınız ve analitik skorunuz bulutta saklanır.</span>
           </div>
           <div className="flex items-center gap-3 text-xs text-[var(--text-secondary)]">
             <ShieldCheck className="w-4 h-4 text-amber-500 shrink-0" />
-            <span>Mevcut çözümlerin kaybolmaz, hesabına otomatik aktarılır.</span>
+            <span>Mevcut yerel çözümleriniz korunur, hesabınızla anında eşleşir.</span>
           </div>
         </div>
 

@@ -30,7 +30,7 @@ export function HintModal({
         <div className="flex items-center justify-between pb-3 border-b border-slate-800">
           <div className="flex items-center gap-2 text-amber-400">
             <Lightbulb className="w-5 h-5 fill-amber-400/20" />
-            <h3 className="font-bold text-sm text-white">Dedektif İpucu Sistemi</h3>
+            <h3 className="font-bold text-sm text-white">Teknik Danışman & İpucu Rehberi</h3>
           </div>
           <button
             onClick={onClose}
@@ -44,7 +44,7 @@ export function HintModal({
         <div className="p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-start gap-2 text-xs text-amber-300">
           <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-amber-400" />
           <p>
-            Her açılan ipucu görevin bitiminde kazanacağınız XP miktarını kademeli olarak azaltır.
+            Açılan her teknik ipucu kademesi, görev tamamlandığında kazanılacak analitik deneyim puanını (XP) dengeler.
           </p>
         </div>
 

@@ -45,7 +45,7 @@ export function ErrorCoachCard({ error, onOpenHints }: ErrorCoachCardProps) {
           ) : (
             <AlertTriangle className="w-4 h-4 text-amber-400" />
           )}
-          <span className="font-bold text-[var(--text-primary)]">DEDEKTİF HATA KOÇU</span>
+          <span className="font-bold text-[var(--text-primary)]">SQL ANALİZ & DOĞRULAMA REHBERİ</span>
         </div>
         <span className={`px-2 py-0.5 rounded text-[10px] font-semibold border ${badge.bg}`}>
           {badge.label}
@@ -60,7 +60,7 @@ export function ErrorCoachCard({ error, onOpenHints }: ErrorCoachCardProps) {
         <div className="p-2.5 rounded-lg bg-black/40 border border-white/[0.08] text-[var(--text-primary)] flex items-start gap-2">
           <Sparkles className="w-4 h-4 text-[var(--accent-color)] shrink-0 mt-0.5" />
           <div className="space-y-0.5">
-            <span className="font-bold text-[var(--accent-color)] block text-[11px]">Koç Tavsiyesi:</span>
+            <span className="font-bold text-[var(--accent-color)] block text-[11px]">Teknik Çözüm Önerisi:</span>
             <p className="text-[11px] leading-relaxed text-[var(--text-muted)]">{error.suggestion}</p>
           </div>
         </div>
@@ -69,13 +69,13 @@ export function ErrorCoachCard({ error, onOpenHints }: ErrorCoachCardProps) {
       {/* Action Hint Prompt */}
       {onOpenHints && (
         <div className="flex items-center justify-between pt-1 text-[11px] border-t border-white/[0.06]">
-          <span className="text-[var(--text-muted)]">Nereden başlayacağınızı bilemediniz mi?</span>
+          <span className="text-[var(--text-muted)]">Alternatif bir yaklaşıma mı ihtiyacınız var?</span>
           <button
             onClick={onOpenHints}
             className="text-[var(--accent-color)] font-bold hover:underline flex items-center gap-1 transition-colors"
           >
             <HelpCircle className="w-3.5 h-3.5" />
-            <span>Kademeli İpucu İncele</span>
+            <span>Teknik İpuçlarını Görüntüle</span>
           </button>
         </div>
       )}

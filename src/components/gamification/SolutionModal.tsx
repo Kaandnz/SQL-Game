@@ -30,7 +30,7 @@ export function SolutionModal({ solutionQuery, onApplyToEditor, onClose }: Solut
         <div className="flex items-center justify-between pb-3 border-b border-slate-800">
           <div className="flex items-center gap-2 text-indigo-400">
             <Eye className="w-5 h-5" />
-            <h3 className="font-bold text-sm text-white">Resmi Çözüm Sorgusu</h3>
+            <h3 className="font-bold text-sm text-white">Referans Çözüm & Standart Sorgu</h3>
           </div>
           <button
             onClick={onClose}
@@ -44,7 +44,7 @@ export function SolutionModal({ solutionQuery, onApplyToEditor, onClose }: Solut
         <div className="p-2.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-start gap-2 text-xs text-indigo-300">
           <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-indigo-400" />
           <p>
-            Çözümü incelediğiniz için bu görevden alacağınız deneyim puanı (XP) %25 oranına düşecektir.
+            Referans çözümü görüntülemek, bağımsız analitik kazanımı dengelemek amacıyla bu görevden elde edilecek net puanı %25 oranına sabitler.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export function SolutionModal({ solutionQuery, onApplyToEditor, onClose }: Solut
             onClick={handleApply}
             className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-indigo-600/30 transition-all active:scale-95"
           >
-            <span>Editöre Yapıştır ve Çalıştır</span>
+            <span>Editöre Aktar ve İncele</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>

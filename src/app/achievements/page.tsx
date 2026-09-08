@@ -63,14 +63,14 @@ export default function AchievementsPage() {
             <div className="flex items-center gap-2 text-amber-400">
               <Trophy className="w-6 h-6" />
               <span className="text-xs font-mono font-bold tracking-wider uppercase">
-                DEDEKTİF VİTRİNİ
+                YETKİNLİK & BAŞARIM VİTRİNİ
               </span>
             </div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-[#f6f3ee]">
-              Kazanılan Başarımlar
+              Kazanılan Yetkinlik Başarımları
             </h1>
             <p className="text-xs md:text-sm text-[#a8a196]">
-              Özel görevleri ve soruşturma şartlarını tamamlayarak rozetlerin kilidini açın.
+              İlişkisel veritabanı senaryolarını ve adli analizleri tamamlayarak yetkinlik rozetlerinizi edinin.
             </p>
           </div>
 
@@ -79,12 +79,12 @@ export default function AchievementsPage() {
               <div className="text-xl font-bold text-amber-400">
                 {unlockedCount} / {totalCount}
               </div>
-              <div className="text-[10px] text-[#736c61] uppercase font-mono">Açılan Rozet</div>
+              <div className="text-[10px] text-[#736c61] uppercase font-mono">Kazanılan Rozet</div>
             </div>
             <div className="w-px h-8 bg-[#282420]" />
             <div className="text-center">
               <div className="text-xl font-bold text-orange-400">%{progressPercent}</div>
-              <div className="text-[10px] text-[#736c61] uppercase font-mono">Tamamlanma</div>
+              <div className="text-[10px] text-[#736c61] uppercase font-mono">Yetkinlik Oranı</div>
             </div>
           </div>
         </div>

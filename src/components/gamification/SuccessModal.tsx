@@ -53,7 +53,7 @@ export function SuccessModal({
         {/* Title */}
         <div className="space-y-1">
           <span className="text-xs uppercase tracking-wider font-bold text-emerald-400">
-            GÖREV BAŞARIYLA TAMAMLANDI
+            Sorgu Başarıyla Doğrulandı
           </span>
           <h2 className="text-lg font-bold text-white">{challenge.title}</h2>
           <p className="text-xs text-slate-400">{challenge.subtitle}</p>
@@ -66,15 +66,15 @@ export function SuccessModal({
               <Zap className="w-4 h-4 fill-emerald-400" />
               <span>+{xpEarned} XP</span>
             </div>
-            <span className="text-[10px] text-slate-400 font-medium">Deneyim Puanı</span>
+            <span className="text-[10px] text-slate-400 font-medium">Analitik Puan</span>
           </div>
 
           <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-amber-500/10 border border-amber-500/20">
             <div className="flex items-center gap-1 text-amber-400 font-bold text-sm">
               <Flame className="w-4 h-4 fill-amber-500" />
-              <span>Seri Devam Ediyor</span>
+              <span>Çalışma Serisi Aktif</span>
             </div>
-            <span className="text-[10px] text-slate-400 font-medium">Günlük Streak</span>
+            <span className="text-[10px] text-slate-400 font-medium">Günlük İstikrar</span>
           </div>
         </div>
 
@@ -82,14 +82,14 @@ export function SuccessModal({
         {newLevelUnlocked && (
           <div className="p-3 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/40 rounded-xl text-amber-300 text-xs font-bold flex items-center justify-center gap-2">
             <Trophy className="w-4 h-4 fill-amber-400" />
-            <span>TEBRİKLER! Seviye {newLevel} Dedektifliğe Yükseldin!</span>
+            <span>KADEME YÜKSELDİ: Kademe {newLevel} Yetkinlik Seviyesine Ulaştınız!</span>
           </div>
         )}
 
         {/* Learning Notes if available */}
         {challenge.learningNotes && (
           <p className="text-xs text-slate-300 bg-slate-950/40 p-2.5 rounded-lg border border-slate-800/80 text-left">
-            💡 <span className="font-semibold text-emerald-400">Not: </span>
+            💡 <span className="font-semibold text-emerald-400">Teknik Not: </span>
             {challenge.learningNotes}
           </p>
         )}
@@ -102,7 +102,7 @@ export function SuccessModal({
               className="flex-1 py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              Tekrar Dene
+              Tekrar Çalıştır
             </button>
           )}
 
@@ -111,7 +111,7 @@ export function SuccessModal({
               onClick={onNextChallenge}
               className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white text-xs font-bold shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-1.5 transition-transform active:scale-95"
             >
-              <span>Sonraki Göreve Geç</span>
+              <span>Sonraki Göreve İlerle</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           )}
